@@ -1,0 +1,85 @@
+/* Root styles */
+:root {
+  --primary: #6a11cb;
+  --secondary: #2575fc;
+  --background: #f4f7ff;
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --btn-hover: #4a00e0;
+}
+
+/* Container */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.login-card {
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.title {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Input */
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 15px 0;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: border 0.3s ease;
+  font-size: 16px;
+}
+
+.input:focus {
+  border-color: var(--secondary);
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
