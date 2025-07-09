@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@angular/animations": "^19.2.14",
+    "@angular/cli": "^19.2.3",
+    "@angular/compiler-cli": "^19.2.14",
+    "@angular/core": "^19.2.14",
+    "@angular/forms": "^19.2.14",
+    "@angular/platform-browser": "^19.2.14",
+    "@angular/platform-browser-dynamic": "^19.2.14",
+    "@angular/router": "^19.2.14",
+    "primeicons": "^7.0.0",
+    "primeng": "^19.1.3"
+  }
+}
