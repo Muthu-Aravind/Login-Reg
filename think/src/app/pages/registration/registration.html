@@ -1,36 +1,135 @@
-<div class="registration-container">
-    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-        <h2>Register</h2>
+<div class="innovative-registration-container">
+  <form
+    [formGroup]="registrationForm"
+    (ngSubmit)="onSubmit()"
+    class="innovative-registration-form"
+  >
+    <div class="innovative-header">
+      <div class="innovative-logo-animation">
+        <svg
+          class="innovative-logo"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="brainGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#6366F1" />
+              <stop offset="100%" stop-color="#8B5CF6" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M9 3C7 4 6 5.5 6 8C4 9 4 11 6 12C4 13 4 15 6 16C6 18.5 7 20 9 21M15 3C17 4 18 5.5 18 8C20 9 20 11 18 12C20 13 20 15 18 16C18 18.5 17 20 15 21"
+            stroke="url(#brainGradient)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <h1 class="innovative-app-name">Begin Your Journey</h1>
+    </div>
 
-        <!-- Email -->
-        <label>Email</label>
-        <input type="email" formControlName="email" placeholder="Enter your email" />
-        <div *ngIf="submitted && f['email'].errors" class="error">
-            <small *ngIf="f['email'].errors?.['required']">Email is required</small>
-            <small *ngIf="f['email'].errors?.['email']">Invalid email format</small>
+    <div class="innovative-input-group">
+      <div class="innovative-form-group">
+        <input
+          type="email"
+          id="innovative-email"
+          formControlName="email"
+          class="innovative-input"
+          placeholder=" "
+        />
+        <label for="innovative-email" class="innovative-floating-label"
+          >Email</label
+        >
+        <div class="innovative-input-underline"></div>
+        <div *ngIf="submitted && f['email'].errors" class="innovative-error">
+          <small *ngIf="f['email'].errors?.['required']">Email is required</small>
+          <small *ngIf="f['email'].errors?.['email']">Invalid email format</small>
         </div>
+      </div>
 
-        <!-- Password -->
-        <label>Password</label>
-        <input type="password" formControlName="password" placeholder="Enter password" />
-        <div *ngIf="submitted && f['password'].errors" class="error">
-            <small *ngIf="f['password'].errors?.['required']">Password is required</small>
-            <small *ngIf="f['password'].errors?.['minlength']">Minimum 6 characters</small>
+      <div class="innovative-form-group">
+        <input
+          type="password"
+          id="innovative-password"
+          formControlName="password"
+          class="innovative-input"
+          placeholder=" "
+        />
+        <label for="innovative-password" class="innovative-floating-label"
+          >Password</label
+        >
+        <div class="innovative-input-underline"></div>
+        <div *ngIf="submitted && f['password'].errors" class="innovative-error">
+          <small *ngIf="f['password'].errors?.['required']"
+            >Password is required</small
+          >
+          <small *ngIf="f['password'].errors?.['minlength']"
+            >Minimum 6 characters</small
+          >
         </div>
+      </div>
 
-        <!-- Confirm Password -->
-        <label>Re-enter Password</label>
-        <input type="password" formControlName="confirmPassword" placeholder="Confirm password" />
-        <div *ngIf="submitted && f['confirmPassword'].errors" class="error">
-            <small *ngIf="f['confirmPassword'].errors?.['required']">Please re-enter your password</small>
+      <div class="innovative-form-group">
+        <input
+          type="password"
+          id="innovative-confirm-password"
+          formControlName="confirmPassword"
+          class="innovative-input"
+          placeholder=" "
+        />
+        <label for="innovative-confirm-password" class="innovative-floating-label"
+          >Confirm Password</label
+        >
+        <div class="innovative-input-underline"></div>
+        <div *ngIf="submitted && f['confirmPassword'].errors" class="innovative-error">
+          <small *ngIf="f['confirmPassword'].errors?.['required']"
+            >Please re-enter your password</small
+          >
         </div>
+      </div>
 
-        <!-- Password Mismatch -->
-        <div *ngIf="passwordMismatch" class="error">
-            <small>Passwords do not match</small>
-        </div>
+      <div *ngIf="passwordMismatch" class="innovative-error">
+        <small>Passwords do not match</small>
+      </div>
+    </div>
 
-        <!-- Submit Button -->
-        <button type="submit">Register</button>
-    </form>
+    <button
+      type="submit"
+      class="innovative-submit-btn"
+      [disabled]="registrationForm.invalid && submitted"
+    >
+      <span class="innovative-btn-text">Register</span>
+      <div class="innovative-btn-arrow">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M3.333 8H12.666"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8 3.333L12.667 8 8 12.667"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </button>
+
+    <div class="innovative-footer">
+      <span>Already have an account?</span>
+      <a href="/login" class="innovative-link">Sign in</a>
+    </div>
+  </form>
 </div>

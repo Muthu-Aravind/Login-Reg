@@ -1,50 +1,133 @@
-<div class="login-container">
-  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="login-form">
-    <h2 class="title">Welcome Back</h2>
-
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        ngModel
-        required
-        class="input"
-        placeholder="Enter your email"
-      />
+<div class="innovative-login-container">
+  <form
+    #loginForm="ngForm"
+    (ngSubmit)="onSubmit(loginForm)"
+    class="innovative-login-form"
+  >
+    <div class="innovative-header">
+      <div class="innovative-logo-animation">
+        <svg
+          class="innovative-logo"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="brainGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#6366F1" />
+              <stop offset="100%" stop-color="#8B5CF6" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M9 3C7 4 6 5.5 6 8C4 9 4 11 6 12C4 13 4 15 6 16C6 18.5 7 20 9 21M15 3C17 4 18 5.5 18 8C20 9 20 11 18 12C20 13 20 15 18 16C18 18.5 17 20 15 21"
+            stroke="url(#brainGradient)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <h1 class="innovative-app-name">Continue Your Path</h1>
     </div>
 
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        ngModel
-        required
-        minlength="6"
-        class="input"
-        placeholder="Enter your password"
-      />
+    <div class="innovative-input-group">
+      <div class="innovative-form-group">
+        <input
+          type="email"
+          id="innovative-email"
+          name="email"
+          ngModel
+          required
+          class="innovative-input"
+          placeholder=" "
+        />
+        <label for="innovative-email" class="innovative-floating-label"
+          >Email</label
+        >
+        <div class="innovative-input-underline"></div>
+      </div>
+
+      <div class="innovative-form-group">
+        <input
+          type="password"
+          id="innovative-password"
+          name="password"
+          ngModel
+          required
+          minlength="6"
+          class="innovative-input"
+          placeholder=" "
+        />
+        <label for="innovative-password" class="innovative-floating-label"
+          >Password</label
+        >
+        <div class="innovative-input-underline"></div>
+      </div>
+
+      <div class="innovative-form-group">
+        <select
+          id="innovative-role"
+          name="role"
+          ngModel
+          required
+          class="innovative-input"
+        >
+          <option value="" disabled selected></option>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+          <option value="guest">Guest</option>
+        </select>
+        <label for="innovative-role" class="innovative-floating-label"
+          >Role</label
+        >
+        <div class="innovative-input-underline"></div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="role">Role</label>
-      <select
-        id="role"
-        name="role"
-        ngModel
-        required
-        class="input"
-      >
-        <option value="" disabled selected>Select role</option>
-        <option value="user">User</option>
-        <option value="admin">Admin</option>
-        <option value="guest">Guest</option>
-      </select>
+    <div class="innovative-options">
+      <label class="innovative-checkbox">
+        <input type="checkbox" checked />
+        <span class="innovative-checkmark"></span>
+        <span class="innovative-remember">Remember me</span>
+      </label>
+      <a href="#" class="innovative-link">Forgot password?</a>
     </div>
 
-    <button type="submit" class="submit-btn" [disabled]="!loginForm.valid">Login</button>
+    <button
+      type="submit"
+      class="innovative-submit-btn"
+      [disabled]="!loginForm.valid"
+    >
+      <span class="innovative-btn-text">Sign In</span>
+      <div class="innovative-btn-arrow">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M3.333 8H12.666"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8 3.333L12.667 8 8 12.667"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </button>
+
+    <div class="innovative-footer">
+      <span>New to NexusAuth?</span>
+      <a href="/register" class="innovative-link">Create account</a>
+    </div>
   </form>
 </div>
